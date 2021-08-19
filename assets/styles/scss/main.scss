@@ -1,0 +1,641 @@
+@import 'font';
+@import 'color';
+@import 'layout';
+@import 'mixin';
+
+
+*, :after, :before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+// header
+.header {
+    @include bgc(var(--text-white), auto);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.08);
+    &_hat {
+        border-bottom: 1px solid var( --grey-light);
+        .container {
+            padding: 14px 0;
+            width: 100%;
+            @include display(center, space-between);
+        }
+        &_item {
+            width: 100%;
+            @include display(center, space-between);
+            &_list {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                &_link {
+                    @include text(16px, 'HelveticaNeueCyr', 550, var(--text-gray));
+                    text-decoration: none;
+                    line-height: 15.81px;
+                }
+                .location {
+                    color: var(--text-blue-dark);
+                }
+            }
+        }
+
+        &_working_hours {
+            .working_hours_text{
+                @include text(16px, 'HelveticaNeueCyr', 550, var(--text-black));
+                &_gray {
+                    color: var(--text-gray);
+                    margin-right: 5px;
+                    line-height: 15.81px;
+                }
+            }
+        }
+    }
+
+    // header middle
+    &_middle {
+        margin-top: 22px;
+        width: 100%;
+        @include display(center, space-between);
+
+        .form_search {
+            @include display(center, center);
+            position: relative;  
+
+            &_brends {
+                &_button {
+                    width: 213px;
+                    height: 54px;
+                    background-color: var( --grey-light);
+                    border-radius: 8px 0px 0px 8px;
+                    @include text(16px, 'HelveticaNeueCyr', 500, var(--text-dark));
+                    @include display(center, center);
+
+                    .downIcon {
+                        margin-top: 2px;
+                        margin-left: 30px;
+                    }
+                }
+            }
+            &_input {
+                width: 548px;
+                height: 54px;
+                border-radius: 0px 8px 8px 0px;
+                border: 1px solid var( --grey-light);
+                outline: none;
+                padding-left: 16px;
+                padding-right: 50px;
+                @include text(16px, 'HelveticaNeueCyr', 550, var(--text-grey));
+
+            }
+
+            &_icon {
+                position: absolute;
+                top: 18px;
+                right: 23px;
+                cursor: pointer;
+            }
+        }
+
+        &_right {
+            @include display(center, space-around);
+        }
+        &_basket {
+            width: 48px;
+            height: 42px;
+            background-color: var( --grey-light);
+            border-radius: 8px;
+            cursor: pointer;
+            @include display(center, center);
+        }
+
+        &_signUp {
+            width: 152px;
+            height: 42px;
+            background-color: var( --grey-light);
+            border-radius: 8px;
+            cursor: pointer;
+            @include display(center, space-between);
+            padding: 0 17px;
+            @include text(16px, 'HelveticaNeueCyr', 500, var(--text-dark));
+            margin-right: 75px;
+        }
+
+    }
+
+    // header nav
+    .header_nav {
+        @include display(center, space-between);
+        margin-top: 25px;
+
+        &_catalog {
+            width: 318px;
+            height: 60px;
+            background-color: var(--text-blue-dark);
+            @include display(center, center);
+
+            &_btn {
+                @include display(center, center);
+                cursor: pointer;
+            }
+
+            &_text {
+                @include text(18px, 'HelveticaNeueCyr', 550, var(--text-white));
+                padding-left: 15px;
+            }
+        }
+
+        &_item {
+            @include display(center, space-between);
+
+            &_list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                &_link {
+                    @include text(16px, 'HelveticaNeueCyr', 550, var(--text-dark)); 
+                    text-decoration: none;
+                    transition: .5s;
+
+                    &:hover {
+                        color: var(--text-blue-dark);
+                    }
+                }
+            }
+        }
+        &_contact {
+            @include display(center, center);
+
+            &_btn {
+                width: 226px;
+                height: 60px;
+                @include display(center, center);
+                margin-right: 25px;
+
+                .contact_phone {
+                    &_num {
+                        @include text(16px, 'HelveticaNeueCyr', 550, var(--text-dark)); 
+                        text-decoration: none;
+                    }
+                    &_text {
+                        @include text(12px, 'HelveticaNeueCyr', 550, var(--text-gray)); 
+                    }
+                    &_downIcon {
+                        margin-left: 19px;
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+// reklama 
+.advertising {
+    .advertising_background {
+        background-image: url('/assets/images/reklama-bgc.jpg');
+        width: 100%;
+        height: 388px;
+        margin-top: 24px;
+        padding: 60px 0 0 89px;
+    }
+    &_title_text {
+        @include text(40px, 'HelveticaNeueCyr', 500, var(--text-white));
+        line-height: 50px;
+    }
+    &_text {
+        @include text(16px, 'HelveticaNeueCyr', 550, var(--text-white)); 
+        margin-top: 16px;      
+    }
+}
+
+// our_services
+.our_services {
+    margin-top: 62px;
+    &_item {
+        @include display(center, space-between);
+        &_list {
+            @include display(center, space-between);
+            width: 262px;
+            .our_services_icon {
+                margin-right: 8px;
+            }
+            .our_services_text {
+                @include text(16px, 'HelveticaNeueCyr', 500, var(--text-dark));
+                line-height: 20.8px; 
+            }
+        }
+    }
+}
+
+// for trucks
+
+.for_trucks {
+    margin-top: 60px;
+    &_item {
+        @include display(center, space-between);
+    }
+
+    &_title_text {
+        @include text(24px, 'HelveticaNeueCyr', 700, var(--text-dark));
+         margin-bottom: 24px; 
+    }
+
+    .for_bus {
+        width: 660px;
+        height: 260px;
+        background-color: var(--bgc-gray);
+        border-radius: 16px;
+        border: 2px solid var(--bgc-gray);
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        position: relative;
+        transition: .5s;
+
+        &_text {
+            width: 246px;
+            &_title {
+                @include text(20px, 'HelveticaNeueCyr', 600, var(--text-blue-dark));
+                line-height: 25px; 
+            }    
+            &_sub {
+                @include text(14px, 'HelveticaNeueCyr', 550, var(--text-gray));     
+                margin-top: 8px;         
+            } 
+        }
+        &_brends {
+            margin-top: 32px;
+        }
+        &_open_info {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--grey-light);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 8px;
+            @include display(center, center);
+            color: var(--text-gray);
+            transition: .5s;
+            cursor: pointer;
+        }
+        
+        &:hover {
+            border: 2px solid  var(--text-blue-dark)
+        }
+        
+        &:hover  .for_bus_open_info{
+            background-color: var(--text-blue-dark);
+            color: var(--text-white);
+        }
+    }
+    .trucks_china,
+    .trucks_specialist {
+        width: 315px;
+        height: 260px;
+        background-color: var(--bgc-gray);
+        border-radius: 16px;
+        border: 2px solid var(--bgc-gray);
+        position: relative;
+        transition: .5s;
+        
+        &_text {
+            width: 246px;
+            &_title {
+                @include text(20px, 'HelveticaNeueCyr', 600, var(--text-dark));
+                line-height: 25px; 
+                padding-left: 16px;
+                margin-top: 16px;
+            }    
+            &_sub {
+                @include text(14px, 'HelveticaNeueCyr', 550, var(--text-gray));     
+                margin-top: 8px; 
+                padding-left: 16px;        
+            } 
+        }
+        .trucks_brends {
+            width: 100%;
+            margin-top: 12px;
+        }
+        &_open_info {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--grey-light);
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 8px;
+            @include display(center, center);
+            color: var(--text-gray);
+            transition: .5s;
+            cursor: pointer;
+        }
+        
+        &:hover {
+            border: 2px solid  var(--text-blue-dark)
+        }
+        
+        &:hover  .trucks_china_open_info,
+        &:hover  .trucks_specialist_open_info{
+            background-color: var(--text-blue-dark);
+            color: var(--text-white);
+        }
+        .specialist_brend {
+            margin-top: 33px;
+        }
+    }
+
+    // track_brend
+
+    .track_brend {
+        margin-top: 32px;
+        @include display(start, space-between);
+        .col-4 {
+            margin: 0;
+            padding: 0;
+        }
+        &_title_text {
+            @include text(20px, 'HelveticaNeueCyr', 700, var(--text-black));  
+            padding-left: 15px;   
+            margin-bottom: 10px;
+
+        }
+        &_item {
+            @include display(start, start);
+            &_list {
+                .brand_name {
+                    width: 200px;
+                    height: 45px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    @include display(center, start);
+                    padding-left: 15px;
+                    @include text(14px, 'HelveticaNeueCyr', 500, var(--text-gray));  
+                    
+                    &:hover {
+                        background-color: var(--grey-light);
+                        color: var(--text-black);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// stock_slider
+
+.stock_slider {
+    margin: 60px 0;
+    .container {
+        overflow-x: hidden
+    }
+    &_title_text {
+        @include text(24px, 'HelveticaNeueCyr', 600, var(--text-dark));  
+    }
+    &_list {
+        position: relative;
+        width: auto;
+        height: auto;
+    }
+    &_item {
+        @include display(center, center);
+        position: relative;
+        
+        .stock_slider_list_img {
+            width: 397px;
+            height: 190px;
+        }
+
+        .active_slider {
+            width: 522px;
+            height: 218px;
+            margin: 0 99px;
+        }
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            opacity: .6;
+        }
+
+            .prev, 
+            .next {
+                position: absolute;
+                top: 50%;
+                cursor: pointer;
+                z-index: 99;
+            }
+            .prev {
+                left: 0px;
+            }
+            .next {
+                right: 0px;
+                transform: rotate(180deg)
+            }
+
+    }
+}
+
+    // news {
+        .news {
+            &_title_text {
+                @include text(24px, 'HelveticaNeueCyr', 600, var(--text-dark)); 
+                margin-bottom: 17px;   
+            }
+            &_item {
+                @include display(center, space-between);
+                &_list {
+                    width: 430px;
+                    height: 191px;
+                    background-color: var(--grey-light);
+                    border-radius: 16px;
+                    padding: 24px 0 0 24px;
+                    display: flex;
+                    align-items: start;
+                    justify-content: space-between;
+                    border: 2px solid var(--grey-light);
+                    transition: .5s;
+
+                    &:hover {
+                        border: 2px solid var(--text-blue-dark);
+
+                    }
+                    &_day {
+                        display: flex;
+                        flex-direction: column;
+                        .day_text {
+                            @include text(40px, 'HelveticaNeueCyr', 700, var(--text-red));  
+                            line-height: 52px;
+
+                        }
+                        .month_text {
+                            @include text(12px, 'HelveticaNeueCyr', 550, var(--text-red));  
+                            line-height: 15.6px;
+
+                        }
+                    }
+                    &_text {
+                        margin-left: 32px;
+                        .title_text {
+                            @include text(24px, 'HelveticaNeueCyr', 700, var(--text-dark)); 
+                            line-height: 31.2px;
+                        }
+                        .sub_text {
+                            @include text(18px, 'HelveticaNeueCyr', 450, var(--text-gray)); 
+                            line-height: 23.4px;
+                            margin-top: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+    // track info
+    .track_info {
+        margin-top: 60px;
+        &_title_text {
+            @include text(32px, 'HelveticaNeueCyr', 700, var(--text-black)); 
+
+        }
+        &_text {
+            @include text(16px, 'HelveticaNeueCyr', 500, var(--text-black));  
+            line-height: 24px;           
+        }
+        &_brend,
+        .checkout {
+            @include text(16px, 'HelveticaNeueCyr', 500, var(--text-black));  
+            line-height: 24px;           
+            
+            .brend_list,
+            .checkout_list {
+                @include text(16px, 'HelveticaNeueCyr', 500, var(--text-black));  
+                line-height: 24px;
+                margin-left: 10px;              
+            }
+        }
+    }
+
+    // footer
+
+    .footer {
+        @include bgc(var(--grey-light), auto);
+        padding: 52px 0;
+        margin-top: 60px;
+        &_title_text {
+            @include text(32px, 'HelveticaNeueCyr', 700, var(--text-black));    
+            line-height: 31.84px;
+        }
+        &_title_sub_text {
+            @include text(16px, 'HelveticaNeueCyr', 500, var(--text-black)); 
+            margin-top: 16px;      
+        }
+        .footer_hat {
+            @include display(start, space-between);
+
+            &_img {
+               display: flex;
+               justify-content: flex-end;
+            }
+        }
+
+        &_form {
+            margin-top: 16px;
+            margin-bottom: 8px;
+            &_input {
+                width: 365px;
+                height: 45px;
+                border: none;
+                outline: none;
+                border-radius: 8px;
+                padding: 0 16px;
+             @include text(16px, 'HelveticaNeueCyr', 500, var(--text-gray));
+            }
+            &_button {
+                width: 257px;
+                height: 45px;
+                background-color: var(--text-blue-dark);
+                border-radius: 8px;
+                @include text(16px, 'HelveticaNeueCyr', 500, var(--text-white));
+                margin-left: 8px;
+                cursor: pointer;
+            }
+        }
+        .footer_hat_text {
+            @include text(12px, 'HelveticaNeueCyr', 500, var(--text-gray));  
+        }
+
+        .footer_menu {
+            margin-top: 88px;
+            display: flex;
+            &_title_text {
+                @include text(16px, 'HelveticaNeueCyr', 700, var(--text-dark-black));  
+                margin-bottom: 18px;
+            }
+            &_item {
+                display: flex;
+            }
+            &_list {
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                &_text {
+                    text-decoration: none;
+                    @include text(14px, 'HelveticaNeueCyr', 400, var(--text-dark-black));
+                    margin-top: 20px;
+                    &:hover {
+                        color: var(--text-blue-dark);
+                    }
+                }
+            }
+            .right_list {
+                margin-left: 46px;
+            }
+            .company_list {
+                margin-left: 80px;
+            }
+        }
+        &_feedback {
+            margin-top: 10px;
+            margin-left: 140px;
+            &_title_text {
+                @include text(18px, 'HelveticaNeueCyr', 500, var(--text-dark-black));
+                margin-bottom: 8px;
+            }
+            &_phone {
+                @include text(24px, 'HelveticaNeueCyr', 700, var( --text-blue-dark));
+            }
+            .time {
+                @include text(14px, 'HelveticaNeueCyr', 400, var( --text-gray));  
+            }
+            &_address {
+                @include text(14px, 'HelveticaNeueCyr', 400, var( --text-dark));
+                line-height: 18.2px;
+                margin-top: 16px;  
+            }
+            &_contacts {
+                margin-top: 29px;
+                &_list {
+                    margin-right: 24px;
+                }
+            }
+        }
+    }
+
+
+
+
+
+@import 'animate';
+@import 'media';
